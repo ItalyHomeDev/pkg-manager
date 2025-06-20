@@ -91,6 +91,10 @@ It supports single-step operations (update, upgrade, dist-upgrade, etc.), a full
 
 #### Bocaletto Luca
 
+Co-authored-by: Bocaletto Luca <bocaletto-luca@users.noreply.github.com>
+
+---
+
 ## 📄 License
 
 #### This project is licensed under the MIT License.
