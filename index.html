@@ -1,1 +1,137 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pkg-menu.sh – Professional Interactive APT Package Manager (v2.1)</title>
+
+  <!-- GitHub Markdown CSS -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"
+        integrity="sha512-1tV2HpYPXDWZ2U8dGBwS3OWg0doP+2hT0f5Sm5aUnRpxYgiK7g+K1/L0N0o+7vL8VtPrTzZgr9wKbI6mJRwrDw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 2rem;
+      max-width: 800px;
+      background: #f6f8fa;
+      color: #24292e;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    img.badge {
+      vertical-align: middle;
+      margin: 0 .25rem;
+    }
+    hr {
+      margin: 2rem 0;
+      border: none;
+      border-top: 1px solid #e1e4e8;
+    }
+  </style>
+</head>
+
+<body class="markdown-body">
+  <h1>pkg-menu.sh</h1>
+  <h2>Professional Interactive APT Package Manager (v2.1)</h2>
+
+  <p align="center">
+    <a href="https://github.com/bocaletto-luca/pkg-menu.sh/blob/main/pkg-menu.sh">
+      <img class="badge" src="https://img.shields.io/badge/version-2.1-blue.svg"
+           alt="Version 2.1">
+    </a>
+    <a href="https://github.com/bocaletto-luca/pkg-menu.sh/blob/main/LICENSE">
+      <img class="badge" src="https://img.shields.io/badge/license-MIT-green.svg"
+           alt="MIT License">
+    </a>
+  </p>
+
+  <hr />
+
+  <h2>📋 Description</h2>
+  <p>
+    <code>pkg-menu.sh</code> is a zero-dependency Bash script that provides an interactive,
+    colorized menu to manage APT on Debian, Ubuntu, Mint and other derivatives.
+  </p>
+  <p>
+    It supports single-step operations (update, upgrade, dist-upgrade, etc.), a full
+    “auto” maintenance mode, CLI flags, a spinner for progress feedback, and logs every
+    action with timestamps under <code>/var/log/pkg-menu-*.log</code>.
+  </p>
+
+  <h2>⚙️ Prerequisites</h2>
+  <ul>
+    <li>Debian, Ubuntu, Mint or any APT-based distribution</li>
+    <li>Bash 4.0 or newer</li>
+    <li>Run as <strong>root</strong> (script enforces privilege check)</li>
+    <li>No external packages required (uses only coreutils, <code>apt-get</code>, <code>tput</code>, <code>tee</code>)</li>
+  </ul>
+
+  <h2>🚀 Installation</h2>
+  <pre><code class="language-bash"># Clone the repo
+git clone https://github.com/bocaletto-luca/pkg-menu.sh.git
+cd pkg-menu.sh
+
+# Make executable
+chmod +x pkg-menu.sh
+
+# (Optional) Install globally
+sudo mv pkg-menu.sh /usr/local/bin/pkg-menu.sh
+</code></pre>
+
+  <h2>🛠️ Usage</h2>
+  <h3>Command-line Flags</h3>
+  <pre><code class="language-bash">sudo pkg-menu.sh [OPTIONS]
+
+-h, --help       Show help and exit
+-v, --version    Show version and exit
+-a, --auto       Run full maintenance
+                 (update → upgrade → dist-upgrade → autoremove → autoclean)
+</code></pre>
+
+  <h3>Interactive Menu</h3>
+  <p>Simply run without flags:</p>
+  <pre><code class="language-bash">sudo pkg-menu.sh</code></pre>
+  <p>Then choose:</p>
+  <ol>
+    <li>Update package list</li>
+    <li>Upgrade packages</li>
+    <li>Dist-upgrade (full upgrade)</li>
+    <li>Search for a package</li>
+    <li>Install a package</li>
+    <li>Remove a package</li>
+    <li>Autoremove orphaned packages</li>
+    <li>Autoclean apt cache</li>
+    <li>Run full maintenance (auto)</li>
+    <li>Exit</li>
+  </ol>
+
+  <h2>🔧 Examples</h2>
+  <h4>Update only</h4>
+  <pre><code class="language-bash">sudo pkg-menu.sh --update</code></pre>
+
+  <h4>Full interactive maintenance</h4>
+  <pre><code class="language-bash">sudo pkg-menu.sh</code></pre>
+
+  <h4>One-shot auto maintenance</h4>
+  <pre><code class="language-bash">sudo pkg-menu.sh --auto</code></pre>
+
+  <h2>📂 Logs</h2>
+  <p>All operations are logged to:</p>
+  <pre><code class="language-bash">/var/log/pkg-menu-&lt;YYYYMMDD&gt;-&lt;HHMMSS&gt;.log</code></pre>
+  <p>Review these files for audit or troubleshooting.</p>
+
+  <h2>👤 Author</h2>
+  <p>Bocaletto Luca</p>
+
+  <h2>📄 License</h2>
+  <p>This project is licensed under the <strong>MIT License</strong>.</p>
+</body>
+</html>
